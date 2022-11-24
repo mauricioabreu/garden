@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       0f09d3ec-7373-4e6e-98d5-9da311a42814
+:END:
+#+title: TCP_NODELAY
+
+A few days ago I was having a chat with a friend asking about the behavior of turning TCP_NODELAY on and off.
