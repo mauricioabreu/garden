@@ -11,4 +11,4 @@ TCP_NODELAY is one of the TCP (Transmission Control Protocol) flags you can set 
 
 The world has changed a lot since the TCP was created. Today's internet is quick and more reliable than before. We have learned a lot since then - we even improved our applications to be more resilient to network failures. But it was not ever like this.
 
-Nagle's algorithm, created by John Nagle, had the goal to improve the networking performance by avoiding sending small packets through the network. Instead, if buffered the data before sending.
+Nagle's algorithm, created by John Nagle, had the goal to improve the networking performance by avoiding sending small packets through the network. Instead, it buffered the data before sending.
