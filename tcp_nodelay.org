@@ -11,4 +11,12 @@ TCP_NODELAY is one of the TCP (Transmission Control Protocol) flags you can set 
 
 The world has changed a lot since the TCP was created. Today's internet is quick and more reliable than before. We have learned a lot since then - we even improved our applications to be more resilient to network failures. But it was not ever like this.
 
-Nagle's algorithm, created by John Nagle, had the goal to improve the networking performance by avoiding sending small packets through the network. Instead, it buffered the data before sending.
+Nagle's algorithm, created by John Nagle, had the goal to improve the networking performance by avoiding sending small packets through the network. Instead, it buffered the data before sending. Why does it work? Why waiting for a specific buffer size could solve the problem? It works because the buffering happens on the client side, before sending any packets through the network. The network could be overloaded, getting stuck and congestioned.
+
+The algorithm in detail: let's imagine a pipe you can throw any sort of things. Now, imagine you are putting many eggs to get to the other side. Some eggs are differents than others, in shape and size. What happens if you place an uncommon egg? The pipe can congestion and the traffic will be slow. Adding more and more eggs will slow the traffic, making it get even worse when just one egg was stuck inside the pipe. Instead of stacking a problem over the other, we wait a few units of time before sending the next shipment. And now it flows smoothy again! The time we waited was essential, clearing the path so we can roll more eggs.
+
+Do you know the current state of the internet today? No? Don't worry. Do you think it is better than it was in the past? If you said yes, you are right. Everything got much better since the first all-the-world-is-connected days. So, why do we still use Nagle's algorithm? An honest answer to thsi question is we don't realize we no longer use it. NGINX, a well-known webserver, [[http://nginx.org/en/docs/http/ngx_http_core_module.html#tcp_nodelay][sets its default to true]]
+
+** Using TCP_NODELAY
+
+What does the TCP_NODELAY flag do when it is enabled? It deactivates the Nagle's algorithm.
