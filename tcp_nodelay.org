@@ -19,4 +19,8 @@ Do you know the current state of the internet today? No? Don't worry. Do you thi
 
 ** Using TCP_NODELAY
 
-What does the TCP_NODELAY flag do when it is enabled? It deactivates the Nagle's algorithm.
+What does the TCP_NODELAY flag do when it is enabled? It deactivates the Nagle's algorithm. From now on, the data will flow through the socket regardless the packet size. You might be asking if you should enable TCP_NODELAY. There is no default answer in this case because every application has its own requirements. Some applications can wait for packages to be sent and others, with aggressive workloads, just can't add more latency to the end user.
+
+** Measure your latency
+
+Whatever your application does, measure the latency of your request/response cycle. Having the right metrics will help you deciding whether you turn TCP_NODELAY on or off.
