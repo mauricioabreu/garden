@@ -24,3 +24,5 @@ What does the TCP_NODELAY flag do when it is enabled? It deactivates the Nagle's
 ** Measure your latency
 
 Whatever your application does, measure the latency of your request/response cycle. Having the right metrics will help you deciding whether you turn TCP_NODELAY on or off.
+
+Go and check yourself the numbers, using the [[https://github.com/mauricioabreu/tcp_nodelay_demo][available demo]]
