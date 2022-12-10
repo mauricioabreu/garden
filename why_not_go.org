@@ -1,0 +1,18 @@
+:PROPERTIES:
+:ID:       916f03ad-79dc-4b44-b88e-f3da2678eea3
+:END:
+#+title: Why not go?
+
+I've been programming go for 4 years professionaly, and yet I'm not convinced this is a language I enjoy coding.
+
+There is a plenty of articles on the web talking in details about the specific reasons to not choose go.
+
+So, what are the things I don't enjoy in the go programming language? Have a seat.
+
+** Error handling
+
+Ok, you already know this one. Error handling in go does not make me happy because it is easily skippable. There is no standard way to make errors
+mandatory to be checked by the compiler. Yes, I know we have linters to help us on this way and I know tooling matters. But I think go deserves a better way to handle
+errors than relying on linters to help programmers reduce the total amount of bugs produced by written code. Now that go has generics, we could have this implemented just like Rust does.
+
+There are some implementations of error handling using monads in go, but all of them still use interfaces. Interfaces are unsafe and slow, since they are checked in runtime.
